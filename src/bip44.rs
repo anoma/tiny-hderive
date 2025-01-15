@@ -1,5 +1,6 @@
 use super::Error;
 
+use std::ops::Deref;
 use std::str::FromStr;
 
 const HARDENED_BIT: u32 = 1 << 31;
@@ -73,11 +74,25 @@ impl FromStr for DerivationPath {
     }
 }
 
-impl DerivationPath {
-    pub fn as_ref(&self) -> &[ChildNumber] {
+impl Deref for DerivationPath {
+    type Target = [ChildNumber];
+
+    fn deref(&self) -> &Self::Target {
         &self.path
     }
+}
 
+impl<T> AsRef<T> for DerivationPath
+where
+    T: ?Sized,
+    <DerivationPath as Deref>::Target: AsRef<T>,
+{
+    fn as_ref(&self) -> &T {
+        self.deref().as_ref()
+    }
+}
+
+impl DerivationPath {
     pub fn iter(&self) -> impl Iterator<Item = &ChildNumber> {
         self.path.iter()
     }
