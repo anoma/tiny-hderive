@@ -1,13 +1,13 @@
 [package]
-name = "tiny-hderive"
-version = "0.3.0"
+name = "nam-tiny-hderive"
+version = "0.3.1-nam.0"
 authors = ["Parity Technologies <admin@parity.io>"]
 edition = "2018"
 license = "GPL-3.0"
-description = "Tiny BIP44/BIP32 derivation for BIP39 seeds"
+description = "(Namada fork) Tiny BIP44/BIP32 derivation for BIP39 seeds"
 documentation = "https://docs.rs/tiny-hderive"
 homepage = "https://github.com/maciejhirsz/tiny-hderive"
-repository = "https://github.com/maciejhirsz/tiny-hderive"
+repository = "https://github.com/anoma/tiny-hderive"
 keywords = ["bitcoin", "ethereum", "bip32", "bip39", "bip44"]
 
 [dependencies]
