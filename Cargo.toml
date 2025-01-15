@@ -11,12 +11,12 @@ repository = "https://github.com/maciejhirsz/tiny-hderive"
 keywords = ["bitcoin", "ethereum", "bip32", "bip39", "bip44"]
 
 [dependencies]
-libsecp256k1 = "0.3.5"
-base58 = "0.1.0"
-sha2 = "0.8.0"
-hmac = "0.7.0"
-memzero = "0.1.0"
+k256 = "0.13"
+base58 = "0.2"
+sha2 = "0.10"
+hmac = "0.12"
+memzero = "0.1"
 
 [dev-dependencies]
-ethsign = { version = "0.3", default-features = false, features = ["secp256k1-rs"] }
-tiny-bip39 = "0.6"
+ethsign = { version = "0.9", default-features = false, features = ["pure-rust"] }
+tiny-bip39 = "1.0"
